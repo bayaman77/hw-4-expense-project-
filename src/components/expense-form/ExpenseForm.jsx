@@ -71,12 +71,15 @@ const ExpenseForm = (props) => {
           labelName="Дата"
           inputType="date"
           placeholder="дд.мм.гггг"
+          min='2019-01-01'
+          max='2023-12-31'
+          value={date}
           onChange={dateInputChangeHandler}
         />
       </div>
       <div className="btn-wrapper">
         <Button onClick={canselHandler}>Отмена</Button>
-        <Button disable={!isFilledFields} onClick={saveHandler}>Добавить расход</Button>
+        <Button disabled={!isFilledFields} onClick={saveHandler}>Добавить расход</Button>
       </div>
     </form>
   );
