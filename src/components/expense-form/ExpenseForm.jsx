@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Button from "../UI/button/Button";
 import FormInput from "../UI/form-input/FormInput";
-import "./ExpenseForm.css";
+import styled from "styled-components";
 
 const ExpenseForm = (props) => {
   const [title, setTitle] = useState("");
@@ -44,12 +44,12 @@ const ExpenseForm = (props) => {
       setTitle("");
       setPrice("");
       setDate("");
-    } 
+    }
   };
 
   return (
-    <form className="form">
-      <div className="inputs-wrapper">
+    <StyledForm>
+      <InputsWrapper>
         <FormInput
           id="name"
           labelName="Название"
@@ -71,18 +71,38 @@ const ExpenseForm = (props) => {
           labelName="Дата"
           inputType="date"
           placeholder="дд.мм.гггг"
-          min='2019-01-01'
-          max='2023-12-31'
+          min="2019-01-01"
+          max="2023-12-31"
           value={date}
           onChange={dateInputChangeHandler}
         />
-      </div>
-      <div className="btn-wrapper">
+      </InputsWrapper>
+      <BtnWrapper>
         <Button onClick={canselHandler}>Отмена</Button>
-        <Button disabled={!isFilledFields} onClick={saveHandler}>Добавить расход</Button>
-      </div>
-    </form>
+        <Button disabled={!isFilledFields} onClick={saveHandler}>
+          Добавить расход
+        </Button>
+      </BtnWrapper>
+    </StyledForm>
   );
 };
 
 export default ExpenseForm;
+
+const StyledForm = styled.form`
+  width: 100%;
+  height: 100%;
+  padding: 10px 40px;
+  display: flex;
+  flex-direction: column;
+`;
+
+const InputsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const BtnWrapper = styled.div`
+  display: flex;
+  justify-content: end;
+`;

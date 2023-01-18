@@ -1,11 +1,20 @@
 import React from 'react';
-
-import './Button.css'
+import styled from 'styled-components'
 
 const Button = ({children, ...props}) => {
     return (
-        <button className='btn' {...props}>{children}</button>
+        <StyledButton className='btn' {...props}>{children}</StyledButton>
     );
 };
 
 export default Button;
+
+const StyledButton = styled.button`
+    margin: 7px;
+    background-color: #4A026B;
+    color: white;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+`

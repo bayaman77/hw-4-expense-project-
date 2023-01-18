@@ -3,7 +3,7 @@ import { useState } from "react";
 import Chart from "../chart/Chart";
 import ExpenseItem from "../expense-item/ExpenseItem";
 import ExpensesFilter from "../expensesFilter/ExpensesFilter";
-import "./Expenses.css";
+import styled from "styled-components";
 
 const Expenses = ({ expenses }) => {
   const [selectedYear, setSelectedYear] = useState("2023");
@@ -18,9 +18,9 @@ const Expenses = ({ expenses }) => {
   });
 
   return (
-    <ul className="list__container">
+    <ListContainer>
       <ExpensesFilter value={selectedYear} onChange={yearChangeHandler} />
-      <Chart expenses={filteredItems}/>
+      <Chart expenses={filteredItems} />
       {expenses.length ? (
         filteredItems.map((elem) => {
           return (
@@ -33,10 +33,23 @@ const Expenses = ({ expenses }) => {
           );
         })
       ) : (
-        <h1 className="nothing">Expenses don't found!🤷🏻‍♂️</h1>
+        <Title>Expenses don't found!🤷🏻‍♂️</Title>
       )}
-    </ul>
+    </ListContainer>
   );
 };
 
 export default Expenses;
+
+const ListContainer = styled.ul`
+  width: 100%;
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  padding: 28px 16px;
+`;
+
+const Title = styled.h1`
+   margin-top: 20px;
+    text-align: center;
+    color: white;
+`

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Expenses from "./components/expenses/Expenses";
 import NewExpenses from "./components/newExpense/NewExpenses";
+import styled from "styled-components";
 
 const App = () => {
   const [expenses, setExpenses] = useState([]);
@@ -11,11 +12,17 @@ const App = () => {
   };
 
   return (
-    <div className="app">
+    <Container>
       <NewExpenses onNewExpenseAdd={addNewExpenseHandler} />
       <Expenses expenses={expenses} />
-    </div>
+    </Container>
   );
 };
 
 export default App;
+
+const Container = styled.div`
+  width: 780px;
+  margin: 0 auto;
+  padding-top: 50px;
+`;
