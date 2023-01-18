@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/hw-4-expense-project-/static/css/main.14bfd6f3.css",
-    "main.js": "/hw-4-expense-project-/static/js/main.9e30cbfe.js",
+    "main.css": "/hw-4-expense-project-/static/css/main.22a7f924.css",
+    "main.js": "/hw-4-expense-project-/static/js/main.cd34b5b2.js",
     "index.html": "/hw-4-expense-project-/index.html",
-    "main.14bfd6f3.css.map": "/hw-4-expense-project-/static/css/main.14bfd6f3.css.map",
-    "main.9e30cbfe.js.map": "/hw-4-expense-project-/static/js/main.9e30cbfe.js.map"
+    "main.22a7f924.css.map": "/hw-4-expense-project-/static/css/main.22a7f924.css.map",
+    "main.cd34b5b2.js.map": "/hw-4-expense-project-/static/js/main.cd34b5b2.js.map"
   },
   "entrypoints": [
-    "static/css/main.14bfd6f3.css",
-    "static/js/main.9e30cbfe.js"
+    "static/css/main.22a7f924.css",
+    "static/js/main.cd34b5b2.js"
   ]
 }
